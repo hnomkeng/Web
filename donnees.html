@@ -84,6 +84,14 @@
         <li class="breadcrumb-item active">Ragnarok</li>
       </ol>
       <!-- Premier tableau-->
+
+      <!-- Récupération donne sur la base de donnée -->
+    <!--On se connecte à MySQL-->
+      <?php
+
+    // On se connecte à MySQL
+      $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', ''); ?>
+      
       <div class="card mb-3">
         <div class="card-header">
           <i class="fa fa-table"></i> Data Table </div>
@@ -109,16 +117,10 @@
               </tfoot>
               <tbody>
                 <tr>
-                  <td> 1</td>
-                  <td>000...</td>
-                  <td>12/05/2016</td>
-                  <td>61</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>000...</td>
-                  <td>12/06/2018</td>
-                  <td>78</td>
+                  <td><?php echo $donnees['nom']; ?></td>
+                  <td><?php echo $donnees['MAC']; ?></td>
+                  <td><?php echo $donnees['Time']; ?></td>
+                  <td><?php echo $donnees['IP']; ?></td>
                 </tr>                
                 </tr>
               </tbody>
@@ -163,14 +165,14 @@
               </tfoot>
               <tbody>
                 <tr>
-                  <td> ..</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>..</td>
-                  <td> ..</td>
-                  <td>...</td>
-                  <td>...</td>
-                  <td>..</td>
+                  <td><?php echo $donnees['Info Mac']; ?></td>
+                  <td><?php echo $donnees['MAc']; ?></td>
+                  <td><?php echo $donnees['Channel']; ?></td>
+                  <td><?php echo $donnees['Frequence']; ?></td>
+                  <td><?php echo $donnees['Qualité']; ?></td>
+                  <td><?php echo $donnees['Signal']; ?></td>
+                  <td><?php echo $donnees['ESSID']; ?></td>
+                  <td><?php echo $donnees['Last beacon']; ?></td>
                 </tr>              
               </tbody>
             </table>

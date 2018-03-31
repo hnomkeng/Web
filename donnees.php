@@ -35,7 +35,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donn&eacute;es">
-          <a class="nav-link" href="donnees.html">
+          <a class="nav-link" href="donnees.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Donn&eacute;es</span>
           </a>
@@ -43,11 +43,12 @@
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Composants">
           <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-wrench"></i>
-            <span class="nav-link-text">Composants</span>
+            <span class="nav-link-text">Informations</span>
           </a>
           <ul class="sidenav-second-level collapse" id="collapseComponents">
             <li>
               <a href="materiel.html">Materiel</a>
+              <a href="docs/index.html">Documentations</a>
             </li>
           </ul>
         </li> 
@@ -86,49 +87,68 @@
       <!-- Premier tableau-->
 
       <!-- Récupération donne sur la base de donnée -->
-    <!--On se connecte à MySQL-->
-      <?php
 
-    // On se connecte à MySQL
-      $bdd = new PDO('mysql:host=localhost;dbname=ragnarok_bdd;charset=utf8', 'root', 'root'); ?>
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-table"></i> Data Table </div>
+
+<!DOCTYPE html>
+<?php
+try
+{
+
+  $bdd = new PDO('mysql:host=localhost;dbname=test;charset=utf8', 'root', 'root');
+}
+catch(Exception $e)
+{
+
+        die('Erreur : '.$e->getMessage());
+}
+
+
+
+
+$reponse = $bdd->query('SELECT * FROM jeux_video'); ?>
+
+ <div class="card-body">
+   <div class="table-responsive">
+     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <table>
+                <tr>
+                    <th>id</th>
+                    <th>Jeu</th>
+                    <th>Possesseur</th>
+                    <th>Plate-forme</th>
+                    <th>Joueurs Max</th>
+                    <th>Prix (en euros)</th>
+                    <th>Commentaire</th>
+                </tr>
+
+<?php
+while ($donnees = $reponse->fetch())
+{
+?>
+    <tr>
+                    <td><?php echo $donnees['nom'];?></td>
+                    <td><?php echo $donnees['possesseur'];?></td>
+                    <td><?php echo $donnees['console'];?></td>
+                    <td><?php echo $donnees['nbre_joueurs_max'];?></td>
+                    <td><?php echo $donnees['prix'];?></td>
+                    <td><?php echo $donnees['commentaires'];?></td>
+                </tr>
+    
+<?php
+}
+
+$reponse->closeCursor();
+?>
       
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-table"></i> Data Table </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Rasberry Pi</th>
-                  <th>MAC</th>
-                  <th>Time</th>
-                  <th>IP</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th>Rasberry Pi</th>
-                  <th>Mac</th>
-                  <th>Time</th>
-                  <th>IP</th>
-
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr>
-                  <td><?php echo $donnees['nom']; ?></td>
-                  <td><?php echo $donnees['MAC']; ?></td>
-                  <td><?php echo $donnees['Time']; ?></td>
-                  <td><?php echo $donnees['IP']; ?></td>
-                </tr>                
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+              
+       </table>
       </div>
     </div>
+  </div>
+</div>
 
     <!-- Deuxieme tableau -->
 

@@ -88,9 +88,6 @@
 
       <!-- Récupération donne sur la base de donnée -->
 
-    <div class="card mb-3">
-      <div class="card-header">
-        <i class="fa fa-table"></i> Data Table </div>
 
 <!DOCTYPE html>
 <?php
@@ -110,32 +107,37 @@ catch(Exception $e)
 
 $reponse = $bdd->query('SELECT * FROM jeux_video'); ?>
 
- <div class="card-body">
-   <div class="table-responsive">
-     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <table>
+ <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Data Table </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
                 <tr>
-                    <th>id</th>
-                    <th>Jeu</th>
-                    <th>Possesseur</th>
-                    <th>Plate-forme</th>
-                    <th>Joueurs Max</th>
-                    <th>Prix (en euros)</th>
-                    <th>Commentaire</th>
+                  <th> ID </th>
+                  <th>Nom</th>
+                  <th>Possesseur</th>
+                  <th>Plate-forme</th>
+                  <th>Prix</th>
+                  <th>Nb de joueur Max</th>
+                  <th>Commentaire</th>
                 </tr>
+              </thead>
 
 <?php
 while ($donnees = $reponse->fetch())
 {
 ?>
-    <tr>
-                    <td><?php echo $donnees['nom'];?></td>
-                    <td><?php echo $donnees['possesseur'];?></td>
-                    <td><?php echo $donnees['console'];?></td>
-                    <td><?php echo $donnees['nbre_joueurs_max'];?></td>
-                    <td><?php echo $donnees['prix'];?></td>
-                    <td><?php echo $donnees['commentaires'];?></td>
-                </tr>
+    <tr>  
+          <td><?php echo $donnees['ID'];?></td>          
+          <td><?php echo $donnees['nom'];?></td>
+          <td><?php echo $donnees['possesseur'];?></td>
+          <td><?php echo $donnees['console'];?></td>
+          <td><?php echo $donnees['prix'];?></td>
+          <td><?php echo $donnees['nbre_joueurs_max'];?></td>
+          <td><?php echo $donnees['commentaires'];?></td>
+    </tr>
     
 <?php
 }
@@ -149,57 +151,13 @@ $reponse->closeCursor();
     </div>
   </div>
 </div>
+<footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
 
     <!-- Deuxieme tableau -->
 
- <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-table"></i> Data Table </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-              <thead>
-                <tr>
-                  <th>Info AP</th>
-                  <th>Mac</th>
-                  <th>Channel</th>
-                  <th>Frequence</th>
-                  <th>Qualité</th>
-                  <th>Signal</th>
-                  <th>ESSID</th>
-                  <th>Last beacon</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th>Info AP</th>
-                  <th>Mac</th>
-                  <th>Channel</th>
-                  <th>Frequence</th>
-                  <th>Qualité</th>
-                  <th>Signal</th>
-                  <th>ESSID</th>
-                  <th>Last beacon</th>
-
-                </tr>
-              </tfoot>
-              <tbody>
-                <tr>
-                  <td><?php echo $donnees['Info Mac']; ?></td>
-                  <td><?php echo $donnees['MAc']; ?></td>
-                  <td><?php echo $donnees['Channel']; ?></td>
-                  <td><?php echo $donnees['Frequence']; ?></td>
-                  <td><?php echo $donnees['Qualité']; ?></td>
-                  <td><?php echo $donnees['Signal']; ?></td>
-                  <td><?php echo $donnees['ESSID']; ?></td>
-                  <td><?php echo $donnees['Last beacon']; ?></td>
-                </tr>              
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
+ 
 
 
     <!-- /.container-fluid-->
@@ -207,7 +165,7 @@ $reponse->closeCursor();
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Your Website 2018</small>
+          <small>Copyright © WhiteWolf Team</small>
         </div>
       </div>
     </footer>

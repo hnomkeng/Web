@@ -132,7 +132,7 @@ while ($donnees = $reponse->fetch())
 {
 ?>
     <tr>  
-          <td><?php echo $donnees['ID'];?></td>          
+          <td><?php echo $donnees['ID '];?></td>          
           <td><?php echo $donnees['nom'];?></td>
           <td><?php echo $donnees['possesseur'];?></td>
           <td><?php echo $donnees['console'];?></td>

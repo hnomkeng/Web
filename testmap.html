@@ -42,12 +42,22 @@
 		fillOpacity: 0.35////opacité de remplissage du polygone
 	});
 
+
+
 	//lier le polygone à la carte
 	//ceci permet au polygone d'être affiché sur la carte
 	polygoneParcelleHeig.setMap(carte);
-
+// fonction qui permet de placer des points ..
+var rasb2 = new google.maps.Marker({
+		position: new google.maps.LatLng(48.814574, 2.393111),
+		map: carte
+	// image sur marqueur 	setIcon("/")
+	});
 	/********************************************/
+
 }
+
+
 		</script>
 	</head>
 

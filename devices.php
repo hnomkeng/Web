@@ -56,7 +56,7 @@
 						<ul class="sidenav-second-level collapse" id="collapseComponents">
 							<li>
 								<a href="donnees.php">AP data</a>
-								<a href="devices.php">Devices</a>											  			 
+								<a href="devices.php">Devices</a>                              
 							</li>
 						</ul>
 					</li>
@@ -93,60 +93,91 @@
 		</nav>
 		<div class="content-wrapper">
 		<div class="container-fluid">
-		<!-- Breadcrumbs-->
-		<ol class="breadcrumb">
-			<li class="breadcrumb-item">
-				<a href="#">Map</a>
-			</li>
-			<li class="breadcrumb-item active" >Ragnarok</li>
-		</ol>
-		<!-- Area Chart Example-->
-		<div class="card mb-1">
-			<div class="card-header">
-				<i class="fa fa-area-chart"></i> Plan du batiment :
-			</div>
-			<iframe src="testmap.html"
-				width="1300"
-				height="500"> </iframe>
-			</script>
-			<script async defer
-				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWmAOa3UdUVd77Tv2toRMxZANQMaDkt5U&callback=initMap"></script>
-	</body>
-	<div class="card-footer small text-muted">White Wolf</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-8">
+			<!-- Breadcrumbs-->
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="#">Donn&eacute;es</a>
+				</li>
+				<li class="breadcrumb-item active">Ragnarok</li>
+			</ol>
+			<!-- Premier tableau-->
+			<!-- Récupération donne sur la base de donnée -->
+			<?php
+				try
+				{
+				  $databaseHost = 'localhost';
+				  $databaseName = 'ragnarok_bdd';
+				  $databaseUsername = 'root';
+				  $databasePassword = 'root';
+				  $mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName);
+				}
+				catch(Exception $e)
+				{
+				
+						die('Erreur : '.$e->getMessage());
+				}
+				$result = mysqli_query($mysqli, "SELECT * FROM Device_info");
+			?>
 			<div class="card mb-3">
 				<div class="card-header">
-					<i class="fa fa-bar-chart"></i> Autres informations
+					<i class="fa fa-table"></i> Data Table 
 				</div>
 				<div class="card-body">
-					<canvas id="myBarChart" width="100" height="50"></canvas>
+					<div class="table-responsive">
+						<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+							<thead>
+								<tr>
+									<th>MAC</th>
+									<th>Time</th>
+									<th>IP</th>
+								</tr>
+							</thead>
+							<?php
+								while($donnees = mysqli_fetch_array($result))
+								{
+								?>
+							<tr>
+								<td><?php echo $donnees['Mac'];?></td>
+								<td><?php echo $donnees['Time'];?></td>
+								<td><?php echo $donnees['IP'];?></td>
+							</tr>
+							<?php
+								}
+								?>
+						</table>
+					</div>
 				</div>
-				<div class="card-footer small text-muted">White Wolf</div>
 			</div>
 		</div>
 		<footer class="sticky-footer">
-			<div class="container">
-				<div class="text-center"><small>Copyright © WhiteWolfTeam</small>
+		<div class="container">
+		<div class="text-center">
+			<!-- Deuxieme tableau -->
+			<!-- /.container-fluid-->
+			<!-- /.content-wrapper-->
+			<footer class="sticky-footer">
+				<div class="container">
+					<div class="text-center">
+						<small>Copyright © WhiteWolf Team</small>
+					</div>
 				</div>
-			</div>
-		</footer>
-		<!-- Retour en haut de la page -->
-		<a class="scroll-to-top rounded" href="#page-top">
-		<i class="fa fa-angle-up"></i>
-		</a>
-		<!-- Bootstrap core JavaScript-->
-		<script src="vendor/jquery/jquery.min.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<!-- Core plugin JavaScript-->
-		<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-		<!-- Page level plugin JavaScript-->
-		<script src="vendor/chart.js/Chart.min.js"></script>
-		<!-- Custom scripts for all pages-->
-		<script src="js/sb-admin.min.js"></script>
-		<!-- Custom scripts for this page-->
-		<script src="js/sb-admin-charts.min.js"></script>
-	</div>
+			</footer>
+			<!-- Scroll to Top Button-->
+			<a class="scroll-to-top rounded" href="#page-top">
+			<i class="fa fa-angle-up"></i>
+			</a>
+			<!-- Bootstrap core JavaScript-->
+			<script src="vendor/jquery/jquery.min.js"></script>
+			<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+			<!-- Core plugin JavaScript-->
+			<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+			<!-- Page level plugin JavaScript-->
+			<script src="vendor/datatables/jquery.dataTables.js"></script>
+			<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+			<!-- Custom scripts for all pages-->
+			<script src="js/sb-admin.min.js"></script>
+			<!-- Custom scripts for this page-->
+			<script src="js/sb-admin-datatables.min.js"></script>
+		</div>
 	</body>
 </html>

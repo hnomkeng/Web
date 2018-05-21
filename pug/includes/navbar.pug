@@ -4,7 +4,7 @@ nav#mainNav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
   button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
     span.navbar-toggler-icon
   #navbarResponsive.collapse.navbar-collapse
-    ul#exampleAccordion.navbar-nav.navbar-sidenav
+    ul#Accordion.navbar-nav.navbar-sidenav
       li.nav-item(data-toggle='tooltip', data-placement='right', title='Dashboard')
         a.nav-link(href='index.html')
           i.fa.fa-fw.fa-dashboard
@@ -21,17 +21,27 @@ nav#mainNav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
           span.nav-link-text
             | Tables
       li.nav-item(data-toggle='tooltip', data-placement='right', title='Components')
-        a.nav-link.nav-link-collapse.collapsed(data-toggle='collapse', href='#collapseComponents', data-parent='#exampleAccordion')
+        a.nav-link.nav-link-collapse.collapsed(data-toggle='collapse', href='#dataComponents', data-parent='#Accordion')
           i.fa.fa-fw.fa-wrench
           span.nav-link-text
             | Components
-        ul#collapseComponents.sidenav-second-level.collapse
+        ul#dataComponents.sidenav-second-level.collapse
+          li
+            a(href='navbar.html') Navbar
+          li
+            a(href='cards.html') Cards
+      li.nav-item(data-toggle='tooltip', data-placement='right', title='Information')
+        a.nav-link.nav-link-collapse.collapsed(data-toggle='collapse', href='#infoComponents', data-parent='#Accordion')
+          i.fa.fa-fw.fa-wrench
+          span.nav-link-text
+            | Information
+        ul#infoComponents.sidenav-second-level.collapse
           li
             a(href='navbar.html') Navbar
           li
             a(href='cards.html') Cards
       li.nav-item(data-toggle='tooltip', data-placement='right', title='Example Pages')
-        a.nav-link.nav-link-collapse.collapsed(data-toggle='collapse', href='#collapseExamplePages', data-parent='#exampleAccordion')
+        a.nav-link.nav-link-collapse.collapsed(data-toggle='collapse', href='#collapseExamplePages', data-parent='#Accordion')
           i.fa.fa-fw.fa-file
           span.nav-link-text
             | Example Pages
@@ -45,7 +55,7 @@ nav#mainNav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
           li
             a(href='blank.html') Blank Page
       li.nav-item(data-toggle='tooltip', data-placement='right', title='Menu Levels')
-        a.nav-link.nav-link-collapse.collapsed(data-toggle='collapse', href='#collapseMulti', data-parent='#exampleAccordion')
+        a.nav-link.nav-link-collapse.collapsed(data-toggle='collapse', href='#collapseMulti', data-parent='#Accordion')
           i.fa.fa-fw.fa-sitemap
           span.nav-link-text
             | Menu Levels

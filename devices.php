@@ -42,15 +42,9 @@
 						<span class="nav-link-text">MAP</span>
 						</a>
 					</li>
-					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donn&eacute;es">
-						<a class="nav-link" href="donnees.php">
-						<i class="fa fa-fw fa-table"></i>
-						<span class="nav-link-text">Donn&eacute;es</span>
-						</a>
-					</li>
 					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Composants">
 						<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-						<i class="fa fa-fw fa-wrench"></i>
+						<i class="fa fa-table"></i>
 						<span class="nav-link-text">Data</span>
 						</a>
 						<ul class="sidenav-second-level collapse" id="collapseComponents">
@@ -96,7 +90,7 @@
 			<!-- Breadcrumbs-->
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="#">Donn&eacute;es</a>
+					<a href="#">DEVICES</a>
 				</li>
 				<li class="breadcrumb-item active">Ragnarok</li>
 			</ol>

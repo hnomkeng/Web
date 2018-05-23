@@ -22,9 +22,9 @@
 			<span class="navbar-toggler-icon"></span>
 			</button>
 			<center>
-				<a class="nav-link" href="index.html">
+				<a class="nav-link" href="https://github.com/white-wolf-project/Web">
 				<i class="fa fa-fw fa-link"></i>
-				<span class="nav-link-text" >Team White Wolf</span>
+				<span class="nav-link-text">Team White Wolf</span>
 				</a>
 			</center>
 			<!--menu -->
@@ -42,7 +42,7 @@
 						<span class="nav-link-text">MAP</span>
 						</a>
 					</li>
-					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Composants">
+					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Data">
 						<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
 						<i class="fa fa-table"></i>
 						<span class="nav-link-text">Data</span>
@@ -50,16 +50,16 @@
 						<ul class="sidenav-second-level collapse" id="collapseComponents">
 							<li>
 								<a href="donnees.php">AP data</a>
-								<a href="devices.php">Devices</a>                              
+								<a href="devices.php">Devices</a>
 							</li>
 						</ul>
 					</li>
-					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Composants">
-						<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Informations">
+						<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#infoComponents" data-parent="#Accordion">
 						<i class="fa fa-fw fa-wrench"></i>
 						<span class="nav-link-text">Informations</span>
 						</a>
-						<ul class="sidenav-second-level collapse" id="collapseComponents">
+						<ul class="sidenav-second-level collapse" id="infoComponents">
 							<li>
 								<a href="materiel.html">Materiels</a>
 								<a href="docs/index.html">Documentation Mathieu </a>

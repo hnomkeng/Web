@@ -24,7 +24,7 @@
 			<center>
 				<a class="nav-link" href="https://github.com/white-wolf-project/Web">
 				<i class="fa fa-fw fa-link"></i>
-				<span class="nav-link-text" >Team White Wolf</span>
+				<span class="nav-link-text">Team White Wolf</span>
 				</a>
 			</center>
 			<!--menu -->
@@ -42,7 +42,7 @@
 						<span class="nav-link-text">MAP</span>
 						</a>
 					</li>
-					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Donn&eacute;es">
+					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Data">
 						<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
 						<i class="fa fa-table"></i>
 						<span class="nav-link-text">Data</span>
@@ -54,12 +54,12 @@
 							</li>
 						</ul>
 					</li>
-					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Composants">
-						<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+					<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Informations">
+						<a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#infoComponents" data-parent="#Accordion">
 						<i class="fa fa-fw fa-wrench"></i>
 						<span class="nav-link-text">Informations</span>
 						</a>
-						<ul class="sidenav-second-level collapse" id="collapseComponents">
+						<ul class="sidenav-second-level collapse" id="infoComponents">
 							<li>
 								<a href="materiel.html">Materiels</a>
 								<a href="docs/index.html">Documentation Mathieu </a>
@@ -121,12 +121,13 @@
 							<thead>
 								<tr>
 									<th>ESSID</th>
-									<th>MAC</th>
+									<th>Adresse MAC</th>
 									<th>Time</th>
-									<th>Plate-forme</th>
-									<th>Prix</th>
-									<th>Nb de joueur Max</th>
-									<th>Commentaire</th>
+									<th>Frequency</th>
+									<th>Channel</th>
+									<th>Signal en Db</th>
+									<th>Beacon</th>
+									<th>Quality</th>
 								</tr>
 							</thead>
 							<?php
@@ -136,10 +137,12 @@
 								<td><?php echo $donnees['ESSID'];?></td>
 								<td><?php echo $donnees['Mac'];?></td>
 								<td><?php echo $donnees['Time'];?></td>
-								<td><?php echo $donnees['console'];?></td>
-								<td><?php echo $donnees['prix'];?></td>
-								<td><?php echo $donnees['nbre_joueurs_max'];?></td>
-								<td><?php echo $donnees['commentaires'];?></td>
+								<td><?php echo $donnees['Frequency'];?></td>
+								<td><?php echo $donnees['Channel'];?></td>
+								<td><?php echo $donnees['Signal'];?></td>	
+								<td><?php echo $donnees['Beacon'];?></td>
+								<td><?php echo $donnees['Quality'];?></td>							
+
 							</tr>
 							<?php
 								} /* end of PHP while loop */

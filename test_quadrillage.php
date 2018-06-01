@@ -13,11 +13,12 @@ $gutter      = 8;  // espacement des cellules
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Grid</title>
+    <title>Ragnarok</title>
     <style type="text/css" media="screen">
 
     body {
         background-color: #efefef;
+        background-repeat:no-repeat;
         background-image: url(IMG/ecole3.png)
     }
  
@@ -53,7 +54,7 @@ $gutter      = 8;  // espacement des cellules
     }
  
     .grid .cell:hover {
-        background-color: DarkOrange;
+        background-color: RED;
     }
     </style>
     </head>

@@ -6,7 +6,7 @@ $grid_width  = 21; // largeur de la grille
 $grid_height = 21; // hauteur de la grille
 $cell_width  = 25; // largeur d'une cellule
 $cell_height = 25; // hauteur d'une cellule
-$gutter      = 8;  // espacement des cellules
+$spacing      = 8;  // espacement des cellules
  
 ?>
 <!doctype html>
@@ -17,13 +17,13 @@ $gutter      = 8;  // espacement des cellules
     <style type="text/css" media="screen">
 
     body {
-        background-color: #efefef;
+        background-color: #000000;
         background-repeat:no-repeat;
         background-image: url(IMG/ecole3.png)
     }
  
     .grid .row {
-        margin-left: -<?php echo $gutter?>px;
+        margin-left: -<?php echo $spacing?>px;
     }
  
     .grid .row:after {
@@ -37,8 +37,8 @@ $gutter      = 8;  // espacement des cellules
     .grid .cell {
         display: block;
         float: left;
-        margin-left: <?php echo $gutter?>px;
-        margin-bottom: <?php echo $gutter?>px;
+        margin-left: <?php echo $spacing?>px;
+        margin-bottom: <?php echo $spacing?>px;
         width: <?php echo $cell_width?>px;
         height: <?php echo $cell_height?>px;
         border: 1px solid #ccc;

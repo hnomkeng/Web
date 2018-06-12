@@ -68,5 +68,8 @@ $spacing      = 8;  // espacement des cellules
         </div>
     <?php endfor ?>
     </div>
+
+
+
 </body>
 </html>

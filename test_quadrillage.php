@@ -67,6 +67,8 @@ $spacing      = 8;  // espacement des cellules
         <?php endfor ?>
         </div>
     <?php endfor ?>
+
+     <p align="center"><a href="Map.html" >Retour </a></p></body><html>
     </div>
 
 
